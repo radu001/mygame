@@ -33,10 +33,11 @@ public class Main {
 		
 	}
 
+
 	
-	//выбор размера игры
+	//пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ
 	public static void boardSize() {
-	    final JFrame frameSel = new JFrame("Выберете размер игры");
+	    final JFrame frameSel = new JFrame("пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ");
 		frameSel.setSize(500, 250);
 		frameSel.setVisible(true); 
 		frameSel.setResizable(false);
@@ -62,7 +63,7 @@ public class Main {
 			   panelSel.add(menu[i]);
 
 		}
-		//пастроика игровова поля
+		//пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ
 		
 	}
 	
@@ -70,7 +71,7 @@ public class Main {
 	
 	
 	
-	//jFrame object, s - размер поля: s на s
+	//jFrame object, s - пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ: s пїЅпїЅ s
 	public static void userInterface(int s) {
 		frame = new JFrame("Player 1 (x)");
 		frame.setSize(s*70, s*70);
@@ -102,7 +103,7 @@ public class Main {
 	}
 	
 	
-	//запись x или o
+	//пїЅпїЅпїЅпїЅпїЅпїЅ x пїЅпїЅпїЅ o
 	public static void play(int x, int y) {
 		System.out.print("x=" + x + ": y=" + y + "\n");
 		if (board[x][y] != 0) return;
@@ -110,13 +111,13 @@ public class Main {
 		if (player == 1) {
 			grid[x][y].setIcon(xIcon);
 			board[x][y] = 1;
-			if (searchVictory() != 0) {System.out.print("\nВыйграл игрок 1 (x)"); win(player); }
+			if (searchVictory() != 0) {System.out.print("\nпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ 1 (x)"); win(player); }
 			player++;	
 			frame.setTitle("Player 2 (o)");
 		} else {
 			grid[x][y].setIcon(oIcon);
 			board[x][y] = 2;
-			if (searchVictory() != 0) {System.out.print("\nВыйграл игрок 2 (o)"); win(player); }
+			if (searchVictory() != 0) {System.out.print("\nпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ 2 (o)"); win(player); }
 			player--;	
 			frame.setTitle("Player 1 (x)");
 		}
@@ -125,7 +126,7 @@ public class Main {
 	
 
 	
-	// подготовка изоброжении
+	// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 	public static void initImages() {
 		Image imgO, imgX;
 		try {
@@ -143,7 +144,7 @@ public class Main {
 	
 	public static int searchVictory() {
 		
-		//поиск по горизонтали и вертикале
+		//пїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 		int nro = 0, nrh = 0;
 		for (int i = 0; i < size; i++) {
 			nrh=0; nro=0;
@@ -155,7 +156,7 @@ public class Main {
 			}
 				}	
 		
-		//поиск по диагонале 1
+		//пїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ 1
 		int nr1 = 0, nr2 = 0;
 		
 		for (int j = size-1; j >= 0; j--) {
@@ -170,7 +171,7 @@ public class Main {
 			}
 		}
 		
-		//поиск по диагонале 2
+		//пїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ 2
 		int nr3 = 0, nr4 = 0;
 		
 		for (int i = 0; i < size; i++) {
@@ -188,14 +189,14 @@ public class Main {
 		draw ();
 		return 0;
 			}
-	//показ победителя и выбор следующеего деиствия
+	//пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 	public static void win(int id) {
 		JPanel panel = new JPanel();
-		JButton butOk = new JButton("Повтор");
-		JButton butExit = new JButton("Выйти");
+		JButton butOk = new JButton("пїЅпїЅпїЅпїЅпїЅпїЅ");
+		JButton butExit = new JButton("пїЅпїЅпїЅпїЅпїЅ");
 		final JFrame frameWin = new JFrame();
-		if (id == 3) frameWin.setTitle("Ничья");
-		else frameWin.setTitle("Выйграл игрок " + player);
+		if (id == 3) frameWin.setTitle("пїЅпїЅпїЅпїЅпїЅ");
+		else frameWin.setTitle("пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ " + player);
 		frameWin.add(panel);
 		panel.setLayout(new GridLayout(1, 2));
 		panel.add(butOk);
@@ -223,7 +224,7 @@ public class Main {
 		
 	}
 	
-	//обнуливание для новой игры
+	//пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ
 	public static void restart() {
 		for (int i = 0; i < size; i++) 
 			for (int j = 0; j < size; j++) {
@@ -233,7 +234,7 @@ public class Main {
 		player = 1;
 		boardSize();
 	}
-	//ничья
+	//пїЅпїЅпїЅпїЅпїЅ
 	public static void draw () {
 		int nr=0;
 		for (int i = 0; i < size; i++) 
